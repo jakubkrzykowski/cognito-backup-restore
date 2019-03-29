@@ -83,17 +83,9 @@ export const restoreUsers = async (cognito: CognitoISP, UserPoolId: string, file
             const params: AdminCreateUserRequest = {
                 UserPoolId,
                 Username: user.Username,
-                UserAttributes: attributes
+                UserAttributes: attributes,
+                DesiredDeliveryMediums: ['EMAIL']
             };
-
-            // Set Username as email if UsernameAttributes of UserPool contains email
-            if (UsernameAttributes.includes('email')) {
-                params.Username = pluckValue(user.Attributes, 'email') as string;
-                params.DesiredDeliveryMediums = ['EMAIL']
-            } else if (UsernameAttributes.includes('phone_number')) {
-                params.Username = pluckValue(user.Attributes, 'phone_number') as string;
-                params.DesiredDeliveryMediums = ['EMAIL', 'SMS']
-            }
 
             // If password module is specified, use it silently
             // if not provided or it throws, we fallback to password if provided
