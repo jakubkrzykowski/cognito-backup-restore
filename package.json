@@ -21,11 +21,11 @@
     "amazon-cognito"
   ],
   "bugs": {
-    "url": "https://github.com/rahulpsd18/cognito-backup-restore/issues"
+    "url": "https://github.com/jakubkrzykowski/cognito-backup-restore/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rahulpsd18/cognito-backup-restore.git"
+    "url": "git+https://github.com/jakubkrzykowski/cognito-backup-restore.git"
   },
   "author": {
     "name": "Risabh Kumar",
